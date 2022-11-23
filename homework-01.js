@@ -61,6 +61,4 @@ function invertObject(obj) {
     } else newObj[obj[key]] = key;
   }
   return newObj;
-}
-
-invertObject({ a: 0, b: 1, c: 2, d: 2, e: 1 });
+};
