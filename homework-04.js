@@ -45,5 +45,12 @@ function mySort() {
 }
 
 // 4: Insert a n positive number. Print the n-st prime number.
-
-// Chgitem
+function findNthPrime(n) {
+  let primeNumArr = [2,3,5,7];
+  for(i = 8; i <= 99999999; i++) {
+    if(i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0) {
+      primeNumArr.push(i);
+    }
+  }
+  return primeNumArr[n - 1];
+}
