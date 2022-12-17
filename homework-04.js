@@ -46,11 +46,27 @@ function mySort() {
 
 // 4: Insert a n positive number. Print the n-st prime number.
 function findNthPrime(n) {
-  let primeNumArr = [2,3,5,7];
-  for(i = 8; i <= 99999999; i++) {
-    if(i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0) {
-      primeNumArr.push(i);
+  let primeNumAmount = 0;
+  let currentNum = 2;
+
+  function isPrime(num) {
+    if (num < 2) {
+        return false;
+    };
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      };
     }
+    return true;
   }
-  return primeNumArr[n - 1];
+
+  while (numPrimes < n) {
+    if (isPrime(currentNum)) {
+      numPrimes++;
+    }
+    currentNum++;
+  }
+
+  return currentNum - 1;
 }
