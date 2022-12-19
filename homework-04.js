@@ -61,9 +61,9 @@ function findNthPrime(n) {
     return true;
   }
 
-  while (numPrimes < n) {
+  while (primeNumAmount < n) {
     if (isPrime(currentNum)) {
-      numPrimes++;
+      primeNumAmount++;
     }
     currentNum++;
   }
