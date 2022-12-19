@@ -22,14 +22,14 @@ function findMissingNumAmount(arr) {
             biggestNum = el;
         }
     });
-    return biggestNum - smallestNum - 1;
+    return biggestNum - smallestNum - 1 - (arr.length - 2);
 };
 
 // 3: Implement built in array sort method using bubble sort algorithm.
 function mySort(callback) {
   for (let i = 0; i < this.length; i++) {
     let isSwapped = false;
-    for (let j = 0; j < this.length; j++) {
+    for (let j = 0; j < this.length - 1; j++) {
       if (callback(this[j], this[j + 1]) > 0) {
         let next = this[j + 1];
         this[j + 1] = this[j];
