@@ -26,11 +26,11 @@ function findMissingNumAmount(arr) {
 };
 
 // 3: Implement built in array sort method using bubble sort algorithm.
-function mySort() {
+function mySort(callback) {
   for (let i = 0; i < this.length; i++) {
     let isSwapped = false;
-    for (let j = 0; j < this.length - 1; j++) {
-      if (this[j] > this[j + 1]) {
+    for (let j = 0; j < this.length; j++) {
+      if (callback(this[j], this[j + 1]) > 0) {
         let next = this[j + 1];
         this[j + 1] = this[j];
         this[j] = next;
